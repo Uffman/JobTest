@@ -24,7 +24,7 @@ let serve = gulp.series(
     browserSync({
       online: false,
       open: false,
-      port: 9000,
+      port: 5000,
       logLevel: 'silent',
       server: {
         baseDir: ['.'],
