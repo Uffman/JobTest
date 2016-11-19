@@ -1,0 +1,24 @@
+<template>
+  <button type="button" class="btn btn-default" click.delegate="openForm(user)">New</button>
+  <table class="table table-striped">
+    <thead>
+      <th>Id</th>
+      <th>LoginName</th>
+      <th>FirstName</th>
+      <th>LastName</th>
+      <th>Company</th>
+      <th colspan="2"></th>
+    </thead>
+    <tr repeat.for="user of users">
+      <td>${user.id}</td>
+      <td>${user.loginName}</td>
+      <td>${user.firstName}</td>
+      <td>${user.lastName}</td>
+      <td>${user.company.name}</td>
+      <td colspan="2">
+        <button type="button" class="btn btn-default" click.delegate="openForm(user)">Edit</button>
+        <button type="button" class="btn btn-default" click.delegate="deleteUser(user)">Delete</button>
+      </td>
+    </tr>
+  </table>
+</template>

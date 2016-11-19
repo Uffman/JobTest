@@ -1,4 +1,5 @@
 import environment from './environment';
+import 'bootstrap';
 
 //Configure Bluebird Promises.
 Promise.config({
@@ -11,7 +12,8 @@ Promise.config({
 export function configure(aurelia) {
   aurelia.use
     .standardConfiguration()
-    .feature('resources');
+    .feature('resources')
+    .plugin('aurelia-dialog');
 
   if (environment.debug) {
     aurelia.use.developmentLogging();

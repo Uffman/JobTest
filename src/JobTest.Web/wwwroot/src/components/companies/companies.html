@@ -1,0 +1,20 @@
+<template>
+  <button type="button" class="btn btn-default" click.delegate="openForm(company)">New</button>
+  <table class="table table-striped">
+    <thead>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Address</th>
+      <tr colspan="2"></tr>
+    </thead>
+    <tr repeat.for="company of companies">
+      <td>${company.id}</td>
+      <td>${company.name}</td>
+      <td>${company.address}</td>
+      <td colspan="2">
+        <button type="button" class="btn btn-default" click.delegate="openForm(company)">Edit</button>
+        <button type="button" class="btn btn-default" click.delegate="deleteCompany(company)">Delete</button>
+      </td>
+    </tr>
+  </table>
+</template>

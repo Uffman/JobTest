@@ -1,0 +1,30 @@
+<template>
+  <ai-dialog>
+    <ai-dialog-body>
+      <form role="form">
+        <div class="form-group">
+          <label for="loginName">Login Name:</label>
+          <input type="text" value.bind="user.loginName" class="form-control"/>
+        </div>
+        <div class="form-group">
+          <label for="firstName">First Name:</label>
+          <input type="text" value.bind="user.firstName" class="form-control"/>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name: </label>
+          <input type="text" value.bind="user.lastName" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label for="company">Company:</label>
+          <select value.bind="user.companyId" class="form-control">
+            <option repeat.for="company of companies" value.bind="company.id">${company.name}</option>
+          </select>
+        </div>
+      </form>
+    </ai-dialog-body>
+    <ai-dialog-footer>
+      <button click.trigger="controller.cancel()">Cancel</button>
+      <button click.trigger="controller.ok(user)">Save</button>
+    </ai-dialog-footer>
+  </ai-dialog>
+</template>

@@ -1,0 +1,14 @@
+<template>  
+  <!--<ul class="nav nav-tabs">
+    <li class="active"><a href="#">Contries</a></li>
+    <li><a href="#">Users</a></li>
+  </ul>-->
+  <ul class="nav nav-tabs">
+     <li repeat.for="row of router.navigation" class="${row.isActive ? 'active' : ''}">
+       <a data-target="#skeleton-navigation-navbar-collapse.in" href.bind="row.href">${row.title}</a>
+    </li>
+  </ul>
+  <div class="col-md-10" style="padding: 0">
+        <router-view></router-view>
+  </div> 
+</template>

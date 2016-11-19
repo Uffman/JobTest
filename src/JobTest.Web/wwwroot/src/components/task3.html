@@ -1,0 +1,17 @@
+<template>
+  <section class="au-animate">
+    <h2>${heading}</h2>
+    <h4>Check if entered number is leap year.</h3>
+    <form role="form" style="width: 300px;">
+      <div class="form-group">
+         <label for="leapYear">Year:</label>
+        <input type="text" name="leapYear" id="leapYear" class="form-control" value.bind="leapYearValue" placeholder="Enter leap year...">        
+      </div>     
+       <div class="form-group">
+        <label>Is leap year: </label>
+        <p>${leapYearConfirmation}</p>
+      </div>      
+      <button type="button" class="btn btn-default" click.delegate="showAlert()">Check</button>
+    </form>
+  </section>
+</template>

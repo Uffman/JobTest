@@ -91,6 +91,7 @@
         "name": "vendor-bundle.js",
         "prepend": [
           "node_modules/bluebird/js/browser/bluebird.core.js",
+          "node_modules/whatwg-fetch/fetch.js",
           "node_modules/requirejs/require.js"
         ],
         "dependencies": [
@@ -98,6 +99,8 @@
           "aurelia-bootstrapper",
           "aurelia-dependency-injection",
           "aurelia-event-aggregator",
+          "aurelia-fetch-client",
+          "aurelia-http-client",
           "aurelia-framework",
           "aurelia-history",
           "aurelia-history-browser",
@@ -115,6 +118,22 @@
           "aurelia-task-queue",
           "aurelia-templating",
           "aurelia-templating-binding",
+          {
+              "name": "jquery",
+              "path": "../node_modules/jquery/dist",
+              "main": "jquery"
+          },  
+          "jquery",
+          {
+            "name": "bootstrap",
+            "path": "../node_modules/bootstrap/dist",
+            "main": "js/bootstrap.min",
+            "deps": ["jquery"],
+            "exports": "$",
+            "resources": [
+              "css/bootstrap.css"
+            ]
+          },
           "text",
           {
             "name": "aurelia-templating-resources",
@@ -131,7 +150,12 @@
             "path": "../node_modules/aurelia-testing/dist/amd",
             "main": "aurelia-testing",
             "env": "dev"
-          }
+          },
+          {
+              "name": "aurelia-dialog",
+              "path": "../node_modules/aurelia-dialog/dist/amd",
+              "main": "aurelia-dialog"
+          }          
         ]
       }
     ]
